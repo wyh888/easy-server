@@ -24,6 +24,11 @@
   },
   "homepage": "https://github.com/wyh888/easy-server#readme",
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.2",
     "pre-commit": "^1.2.2"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2"
   }
 }
