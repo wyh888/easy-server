@@ -1,8 +1,11 @@
 {
-  "name": "easy-server",
-  "version": "0.0.1",
+  "name": "server-easy",
+  "version": "0.1.0",
   "description": "Tiny NodeJs Static Web Server",
-  "main": "index.js",
+  "main": "src/app.js",
+  "bin": {
+    "server": "bin/server"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
@@ -16,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/wyh888/easy-server.git"
   },
-  "author": "wangyh",
+  "author": "wyh888",
   "email": "18819467659@163.com",
   "license": "ISC",
   "bugs": {
@@ -30,6 +33,7 @@
   },
   "dependencies": {
     "chalk": "^2.4.2",
-    "handlebars": "^4.1.1"
+    "handlebars": "^4.1.1",
+    "yargs": "^13.2.2"
   }
 }

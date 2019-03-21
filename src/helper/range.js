@@ -3,7 +3,7 @@ module.exports = (totalSize, req, res) => {
   if (!range) {
     return {
       code: 200
-    };
+    }
   }
 
   const sizes = range.match(/bytes=(\d*)-(\d*)/)

@@ -5,7 +5,6 @@ const chalk = require('chalk')
 const promisify = require('util').promisify
 const stat = promisify(fs.stat)
 const readdir = promisify(fs.readdir)
-const config = require('../config/defaultConfig')
 const mime = require('../helper/mime')
 const compress = require('../helper/compress')
 const range = require('../helper/range')
@@ -14,7 +13,7 @@ const tplPath = path.join(__dirname, '../template/dir.tpl')
 const source = fs.readFileSync(tplPath)
 const template = Handlebars.compile(source.toString())
 
-module.exports = async function(req, res, filePath) {
+module.exports = async function(req, res, filePath, config) {
   try {
     const stats = await stat(filePath)
     if (stats.isFile()) {
@@ -48,12 +47,12 @@ module.exports = async function(req, res, filePath) {
           }
         })
       }
-      res.end(template(data));
+      res.end(template(data))
     }
   } catch (e) {
     console.error(chalk.red(e))
-    res.statusCode = 404;
-    res.setHeader("Content-Type", "text/plain");
-    res.end(`${filePath} is not a directory or file\n ${e}`);
+    res.statusCode = 404
+    res.setHeader("Content-Type", "text/plain")
+    res.end(`${filePath} is not a directory or file\n ${e}`)
   }
 }
